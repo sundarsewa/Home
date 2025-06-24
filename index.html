@@ -3,94 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundar Sewa - Most Trusted & Honest Services</title>
+    <title>Sundar Sewa - Professional Service Provider</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
+        <div class="nav-container">
             <div class="logo">
-                <img src="images/logo.png" alt="Sundar Sewa Logo">
+                <img src="images/logo.png" alt="Sundar Sewa">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to Sundar Sewa</h1>
-            <p>Your trusted partner for all your service needs in Kathmandu</p>
-            <a href="#contact" class="btn">Contact Us</a>
+        <div class="hero-content">
+            <h1>Professional Services in Kathmandu</h1>
+            <p>Reliable and efficient solutions for all your needs</p>
+            <a href="#contact" class="btn">Get In Touch</a>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
-            <h2>Our Services</h2>
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            
             <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-truck"></i>
-                    <h3>Transportation Services</h3>
-                    <p>Reliable and efficient transportation solutions for your needs.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Transportation</h3>
+                    <p>Professional transportation services with well-maintained vehicles and experienced drivers.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-boxes"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
                     <h3>Goods Delivery</h3>
-                    <p>Safe and timely delivery of goods across Kathmandu.</p>
+                    <p>Safe and timely delivery of goods throughout Kathmandu Valley and beyond.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-people-carry"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-people-carry"></i>
+                    </div>
                     <h3>Moving Services</h3>
-                    <p>Professional moving services for homes and offices.</p>
+                    <p>Stress-free relocation services for homes and offices with proper packing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
         <div class="container">
-            <h2>About Sundar Sewa</h2>
-            <p>Sundar Sewa is a trusted service provider in Kathmandu, dedicated to offering reliable and efficient services to our valued customers. With years of experience in the industry, we pride ourselves on our professionalism and commitment to customer satisfaction.</p>
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <p>Sundar Sewa has been providing top-quality services in Kathmandu since 2015. Our team of professionals is dedicated to delivering exceptional service with attention to detail and customer satisfaction as our top priorities.</p>
+                <p>We take pride in our modern fleet of vehicles and well-trained staff who undergo regular training to ensure we meet international service standards.</p>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>Phone/WhatsApp: 9851126502</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email: sundarsewa.np@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Address: Kalimati 13, Kathmandu<br>Near Aincho Paincho Credit Corporation</p>
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>9851126502</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>sundarsewa.np@gmail.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Address</h4>
+                        <p>Kalimati 13, Kathmandu<br>Near Aincho Paincho Credit Corporation</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2023 Sundar Sewa. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/9851126502"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Sundar Sewa">
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/9851126502"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sundar Sewa. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+    <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
 </body>
-  </html>
+    </html>
