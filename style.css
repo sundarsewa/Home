@@ -98,7 +98,6 @@ a {
 }
 
 .top-header .container {
-    color: #000; 
     background-color: #000; 
     display: flex;
     justify-content: space-between;
@@ -118,7 +117,8 @@ a {
     min-width: max-content;
     flex-shrink: 0;
     width: auto !important;
-    text-color: white;
+    color: #fff;
+    
 }
 
 .header-contact span {
