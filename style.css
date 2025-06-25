@@ -99,6 +99,7 @@ a {
 }
 
 .top-header .container {
+    background-color: #000; 
     display: flex;
     justify-content: space-between;
     align-items: center;
