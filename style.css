@@ -91,7 +91,6 @@ a {
 /* Top Header */
 .top-header {
     background-color: #000; 
-    background: var(--secondary);
     color: white;
     padding: 10px 0;
     font-size: 14px;
