@@ -20,6 +20,36 @@ body {
     color: var(--text);
     overflow-x: hidden;
 }
+  .sundar-sewa-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    text-align: center;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  .sundar {
+    color: #E65100;
+    position: relative;
+  }
+  .sundar::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #E65100;
+    opacity: 0.8;
+  }
+  .sewa {
+    color: #F57C00;
+    font-weight: 600;
+  }
 
 .container {
     width: 90%;
