@@ -90,8 +90,8 @@ a {
 
 /* Top Header */
 .top-header {
+    color; #000;
     background-color: #000; 
-    color: white;
     padding: 10px 0;
     font-size: 14px;
     overflow-x: hidden;
@@ -99,6 +99,7 @@ a {
 }
 
 .top-header .container {
+    color: #000; 
     background-color: #000; 
     display: flex;
     justify-content: space-between;
