@@ -94,12 +94,15 @@ a {
     color: white;
     padding: 10px 0;
     font-size: 14px;
+    overflow-x: hidden;
 }
 
 .top-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 100%;
+    width: 100%;
 }
 .header-contact {
     display: flex;
@@ -109,10 +112,14 @@ a {
     gap: 20px;             
     -webkit-overflow-scrolling: touch;
     padding: 5px 0;
+    min-width: fit-content;
+    flex-shrink: 0;
 }
 
 .header-contact span {
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
 }
 
 .header-contact i {
