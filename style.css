@@ -118,8 +118,7 @@ a {
     min-width: max-content;
     flex-shrink: 0;
     width: auto !important;
-    background-color: #000; 
-    color: white;
+    text-color: white;
 }
 
 .header-contact span {
