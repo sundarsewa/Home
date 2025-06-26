@@ -1,0 +1,45 @@
+<div class="contact-widget" style="font-family: 'Arial', sans-serif; max-width: 320px; margin: 20px auto; border-radius: 12px; padding: 20px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+  
+  <!-- Header with Phone Icon -->
+  <div style="font-size: 40px; margin-bottom: 10px;">
+    <i class="fas fa-headset" style="background: white; color: #25D366; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; display: inline-block;"></i>
+  </div>
+  
+  <h3 style="margin: 5px 0; font-size: 22px; font-weight: 600;">Contact Us</h3>
+  <p style="margin: 0 0 20px; font-size: 14px; opacity: 0.9;">We're here to help you!</p>
+  
+  <!-- Call Button -->
+  <a href="tel:+9779851126502" style="display: block; background: white; color: #128C7E; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; margin: 12px 0; transition: all 0.3s;">
+    <i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +977 985-1126502
+  </a>
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/9779851126502" target="_blank" style="display: block; background: rgba(255,255,255,0.2); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-size: 16px; margin: 12px 0; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3);">
+    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Chat on WhatsApp
+  </a>
+  
+  <!-- Email Button -->
+  <a href="mailto:sundarsewa.np@gmail.com" style="display: block; background: rgba(255,255,255,0.2); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-size: 16px; margin: 12px 0 5px; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3);">
+    <i class="fas fa-envelope" style="margin-right: 10px;"></i> sundarsewa.np@gmail.com
+  </a>
+  
+  <!-- Load Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Hover Effects -->
+  <style>
+    .contact-widget a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+    .contact-widget a:first-of-type:hover {
+      background: #f0f0f0;
+    }
+    .contact-widget a:nth-of-type(2):hover {
+      background: rgba(255,255,255,0.3);
+    }
+    .contact-widget a:last-of-type:hover {
+      background: rgba(255,255,255,0.3);
+    }
+  </style>
+</div>
