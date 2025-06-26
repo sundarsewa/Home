@@ -222,7 +222,7 @@ nav ul li a:hover::after {
     font-size: 2.8rem;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #FFFFF;
+    color: white;
 }
 
 .hero p {
