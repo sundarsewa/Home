@@ -210,12 +210,18 @@ nav ul li a:hover::after {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    /* Slightly lighter overlay (0.4 = 40% darkness) */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: white; /* Pure white text */
     text-align: center;
     padding: 150px 0;
+    
+    /* Subtle text enhancements */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7); /* Soft glow to separate text */
+    font-weight: 600; /* Bold text */
 }
 
 .hero h1 {
