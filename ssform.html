@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundar Sewa Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <title>Application Form | Sundar Sewa Pvt. Ltd.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #4cc9f0;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --success: #2ecc71;
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary: #1e40af;
+            --accent: #06b6d4;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --gray: #94a3b8;
         }
         
         * {
@@ -23,53 +25,43 @@
         }
         
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(67, 97, 238, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(76, 201, 240, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 20%);
         }
         
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
         
-        /* Vibrant Header */
+        /* Modern Header */
         .header {
             text-align: center;
             margin-bottom: 3rem;
-            position: relative;
-            padding: 2rem 0;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            z-index: -1;
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
         
         .logo {
             width: 80px;
             height: 80px;
-            margin-bottom: 1rem;
             background: white;
             border-radius: 50%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .logo img {
@@ -77,88 +69,113 @@
         }
         
         h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
-            background: linear-gradient(to right, white, var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--primary);
             line-height: 1.2;
         }
         
         .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
         }
         
-        /* Animated Form Container */
-        .form-container {
-            background: rgba(26, 26, 46, 0.8);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            margin-bottom: 3rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin: 0 10px;
             position: relative;
-            overflow: hidden;
+            border: 2px solid #e2e8f0;
         }
         
-        .form-container::after {
+        .step.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .step.completed {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        
+        .step::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent 0%,
-                transparent 45%,
-                rgba(76, 201, 240, 0.1) 50%,
-                transparent 55%,
-                transparent 100%
-            );
-            animation: shine 8s infinite;
-            z-index: 0;
+            top: 50%;
+            left: 100%;
+            width: 20px;
+            height: 2px;
+            background: #e2e8f0;
         }
         
-        @keyframes shine {
-            0% { transform: translate(-30%, -30%) rotate(0deg); }
-            100% { transform: translate(30%, 30%) rotate(360deg); }
+        .step:last-child::after {
+            display: none;
         }
         
-        .form-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 15px 40px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
+        /* Form Container */
+        .form-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .form-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-subtitle {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
         
         iframe {
             width: 100%;
             height: 1800px;
             border: none;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
+            border-radius: 12px;
         }
         
-        /* Success Message (Initially Hidden) */
+        /* Success Message */
         .success-message {
             display: none;
             text-align: center;
-            padding: 3rem;
-            background: rgba(46, 204, 113, 0.1);
-            border-radius: 20px;
-            border: 1px solid var(--success);
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             margin-bottom: 3rem;
             animation: fadeIn 0.5s ease-out;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
         
         @keyframes fadeIn {
@@ -167,43 +184,48 @@
         }
         
         .success-icon {
-            font-size: 4rem;
-            color: var(--success);
+            width: 80px;
+            height: 80px;
+            background: #f0fdf4;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
-            animation: bounce 1s ease infinite alternate;
         }
         
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
+        .success-icon i {
+            font-size: 2.5rem;
+            color: var(--success);
         }
         
         .success-message h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: white;
+            color: var(--dark);
         }
         
         .success-message p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: var(--gray);
         }
         
         .success-nepali {
             font-style: italic;
-            opacity: 0.9;
-            border-top: 1px dashed rgba(255, 255, 255, 0.2);
             padding-top: 1rem;
             margin-top: 1rem;
+            border-top: 1px dashed #e2e8f0;
+            color: var(--gray);
         }
         
-        /* Dynamic Footer */
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
             position: relative;
         }
         
@@ -211,70 +233,43 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
         }
         
         .powered-by {
             display: inline-flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: #f8fafc;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
         }
         
         .powered-by span {
             margin-right: 0.5rem;
-            font-size: 0.9rem;
         }
         
         .google-logo {
-            height: 20px;
+            height: 16px;
             width: auto;
         }
         
         .company-info {
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--gray);
             margin-top: 1rem;
-        }
-        
-        /* Floating Elements */
-        .floating {
-            position: absolute;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        
-        .floating-1 {
-            top: 20%;
-            left: 5%;
-            font-size: 10rem;
-            color: var(--accent);
-            animation: float 15s ease-in-out infinite;
-        }
-        
-        .floating-2 {
-            bottom: 10%;
-            right: 5%;
-            font-size: 8rem;
-            color: var(--primary);
-            animation: float 18s ease-in-out infinite reverse;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, 50px) rotate(180deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
-                padding: 1rem;
+                padding: 1.5rem 1rem;
             }
             
             h1 {
@@ -286,7 +281,7 @@
             }
             
             .form-container {
-                padding: 1rem;
+                padding: 1.5rem;
             }
             
             iframe {
@@ -294,11 +289,16 @@
             }
             
             .success-message {
-                padding: 1.5rem;
+                padding: 2rem 1rem;
             }
             
             .success-icon {
-                font-size: 3rem;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .success-icon i {
+                font-size: 2rem;
             }
             
             .success-message h2 {
@@ -308,36 +308,42 @@
     </style>
 </head>
 <body>
-    <div class="floating floating-1">
-        <i class="fas fa-star"></i>
-    </div>
-    
-    <div class="floating floating-2">
-        <i class="fas fa-circle"></i>
-    </div>
-    
     <div class="container">
-        <!-- Vibrant Header -->
+        <!-- Modern Header -->
         <header class="header">
-            <div class="logo">
-                <img src="images/logo2.jpg" alt="Sundar Sewa">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://www.sundarsewa.com.np/wp-content/uploads/2023/03/cropped-Untitled-1-32x32.png" alt="Sundar Sewa">
+                </div>
             </div>
-            <h1>Sundar Sewa Services Form</h1>
-            <p class="subtitle">Please fill out this form to get started with our services<br/>सुविधाहरु को लागि कृपया तलको फर्म भर्नुहोला ।</p>
+            <h1>Service Application Form</h1>
+            <p class="subtitle">Fill out this form to apply for our services. We'll get back to you shortly after reviewing your application.</p>
+            
+            <div class="step-indicator">
+                <div class="step completed">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="step active">2</div>
+                <div class="step">3</div>
+            </div>
         </header>
         
         <!-- Success Message (Hidden by default) -->
         <div class="success-message" id="successMessage">
             <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-check"></i>
             </div>
-            <h2>Submission Successful!</h2>
+            <h2>Application Submitted!</h2>
             <p>Thanks for filling the form, soon we will contact you/your company from the provided details.</p>
             <p class="success-nepali">फर्म भर्नु भएकोमा धेरै धेरै धन्यवाद, चाँडै तपाईंले दिएको विवरण बाट हामी तपाईं वा तपाईंको कम्पनी संग संपर्क गर्ने छौँ</p>
         </div>
         
         <!-- Form Container -->
         <div class="form-container">
+            <div class="form-header">
+                <h2 class="form-title">Application Details</h2>
+                <p class="form-subtitle">Please provide accurate information to help us process your application faster</p>
+            </div>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRowgDvKd8VNXRk9rrCPzmc_PHrtvEkNzLRubzcx0pui0nMQ/viewform?embedded=true" 
                     frameborder="0" 
                     marginheight="0" 
@@ -345,7 +351,7 @@
                     id="formIframe">Loading…</iframe>
         </div>
         
-        <!-- Dynamic Footer -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="powered-by">
                 <span>Powered by</span>
@@ -381,30 +387,11 @@
             } catch(e) {}
         }, 1000);
         
-        // Add floating elements dynamically
-        function createFloatingElements() {
-            const shapes = ['star', 'circle', 'square', 'heart'];
-            const colors = ['#4361ee', '#3a0ca3', '#4cc9f0', '#f72585'];
-            
-            for (let i = 0; i < 5; i++) {
-                const floating = document.createElement('div');
-                floating.className = 'floating';
-                floating.style.left = Math.random() * 100 + '%';
-                floating.style.top = Math.random() * 100 + '%';
-                floating.style.fontSize = (Math.random() * 5 + 3) + 'rem';
-                floating.style.opacity = Math.random() * 0.1 + 0.05;
-                floating.style.animation = `float ${Math.random() * 20 + 10}s ease-in-out infinite ${i % 2 === 0 ? '' : 'reverse'}`;
-                floating.style.color = colors[Math.floor(Math.random() * colors.length)];
-                
-                const icon = document.createElement('i');
-                icon.className = `fas fa-${shapes[Math.floor(Math.random() * shapes.length)]}`;
-                floating.appendChild(icon);
-                
-                document.body.appendChild(floating);
-            }
-        }
-        
-        createFloatingElements();
+        // Add animation to step indicator
+        const steps = document.querySelectorAll('.step');
+        steps.forEach((step, index) => {
+            step.style.transitionDelay = `${index * 0.1}s`;
+        });
     </script>
 </body>
-    </html>
+                    </html>
