@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage (priority: highest) -->
+  <url>
+    <loc>https://www.sundarsewa.com.np/</loc>
+    <lastmod>2025-06-29</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Add other pages here (example) -->
+  <url>
+    <loc>https://www.sundarsewa.com.np/about.html</loc>
+    <lastmod>2025-06-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sundarsewa.com.np/contact.html</loc>
+    <lastmod>2025-06-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sundarsewa.com.np/services.html</loc>
+    <lastmod>2025-06-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sundarsewa.com.np/careers.html</loc>
+    <lastmod>2025-06-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sundarsewa.com.np/team-members.html</loc>
+    <lastmod>2025-06-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sundarsewa.com.np/about.html</loc>
+    <lastmod>2025-06-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
