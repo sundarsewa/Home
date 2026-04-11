@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Application Form | Sundar Sewa Pvt. Ltd.</title>
-    <!-- Font Awesome & Google Fonts -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== RESET & BASE ===== */
         * {
@@ -16,7 +15,7 @@
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background: #ffffff;
@@ -42,8 +41,6 @@
             --primary-dark: #1e1e1e;
             --accent-gold: #FECE0E;
             --accent-orange: #FE7B03;
-            --light-bg: #f9fafb;
-            --border-light: #eef2f6;
         }
 
         /* ===== TOP HEADER ===== */
@@ -144,98 +141,40 @@
             z-index: 1002;
         }
 
-        /* ===== FORM PAGE CONTENT (lightweight & smooth) ===== */
+        /* ===== FORM PAGE (simple, scrollable) ===== */
         .form-page {
-            padding: 50px 0;
-            background: var(--light-bg);
+            padding: 40px 0 60px;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .page-header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-dark);
             margin-bottom: 10px;
         }
 
-        .page-header .subtitle {
-            font-size: 1.1rem;
+        .page-header p {
+            font-size: 1rem;
             color: #555;
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* Step indicator (simplified) */
-        .step-indicator {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0 10px;
-        }
-
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #888;
-            font-weight: 500;
-        }
-
-        .step .circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            transition: all 0.2s;
-        }
-
-        .step.active .circle {
-            background: var(--accent-orange);
-            border-color: var(--accent-orange);
-            color: white;
-        }
-
-        .step.completed .circle {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
-            color: var(--primary-dark);
-        }
-
-        .step .label {
-            font-size: 0.9rem;
-        }
-
-        /* Form container card */
         .form-card {
             background: white;
-            border-radius: 20px;
-            padding: 30px 30px 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-            border: 1px solid var(--border-light);
-            margin-bottom: 30px;
+            border-radius: 16px;
+            padding: 25px 25px 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid #f0e4c6;
+            margin-bottom: 20px;
         }
 
-        .form-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            color: var(--primary-dark);
-        }
-
-        .form-card p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        iframe {
+        .form-card iframe {
             width: 100%;
             height: 1700px;
             border: none;
@@ -243,53 +182,15 @@
             background: #fafafa;
         }
 
-        /* Success message (hidden by default) */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 40px 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-            border: 1px solid var(--border-light);
-            margin-bottom: 30px;
-        }
-
-        .success-message .icon {
-            font-size: 3.5rem;
-            color: var(--accent-orange);
-            margin-bottom: 20px;
-        }
-
-        .success-message h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .success-message p {
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 15px;
-        }
-
-        .success-nepali {
-            font-style: italic;
-            color: #777;
-            border-top: 1px dashed #ddd;
-            padding-top: 20px;
-            margin-top: 20px;
-        }
-
-        /* Powered by Google (lightweight) */
         .powered-by {
             text-align: center;
-            margin: 20px 0 10px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #777;
+            margin-top: 10px;
         }
 
         .powered-by img {
-            height: 14px;
+            height: 12px;
             vertical-align: middle;
             margin-left: 5px;
         }
@@ -387,7 +288,7 @@
 
         @media screen and (max-width: 768px) {
             .container { padding: 0 20px; }
-            .page-header h1 { font-size: 2rem; }
+            .page-header h1 { font-size: 1.9rem; }
 
             .menu-toggle { display: block; }
 
@@ -424,14 +325,12 @@
             .top-header .container { flex-direction: column; align-items: flex-start; }
             .header-contact { gap: 16px; }
             .footer-content { grid-template-columns: 1fr; }
-            .form-card { padding: 20px; }
-            iframe { height: 1900px; }
+            .form-card { padding: 15px; }
+            .form-card iframe { height: 1900px; }
         }
 
         @media screen and (max-width: 480px) {
-            .step-indicator { gap: 15px; }
-            .step .circle { width: 35px; height: 35px; }
-            iframe { height: 2100px; }
+            .form-card iframe { height: 2100px; }
         }
     </style>
 </head>
@@ -476,47 +375,19 @@
     </div>
 </header>
 
-<!-- Form Page Content -->
+<!-- Form Page Content (simple, no steps) -->
 <section class="form-page">
     <div class="container">
         <div class="page-header">
             <h1>Service Application Form</h1>
-            <p class="subtitle">Fill out this form to apply for our services.<br>हाम्रो सुविधाहरूको लागि कृपया तलको फर्म भर्नहोस ।</p>
-            
-            <!-- Simple step indicator -->
-            <div class="step-indicator">
-                <div class="step completed">
-                    <div class="circle"><i class="fas fa-check"></i></div>
-                    <span class="label">Personal</span>
-                </div>
-                <div class="step active">
-                    <div class="circle">2</div>
-                    <span class="label">Details</span>
-                </div>
-                <div class="step">
-                    <div class="circle">3</div>
-                    <span class="label">Confirm</span>
-                </div>
-            </div>
+            <p>Fill out this form to apply for our services. हाम्रो सुविधाहरूको लागि कृपया तलको फर्म भर्नहोस ।</p>
         </div>
 
-        <!-- Success Message (hidden initially) -->
-        <div class="success-message" id="successMessage">
-            <div class="icon"><i class="fas fa-check-circle"></i></div>
-            <h2>Application Submitted!</h2>
-            <p>Thanks for filling the form. We will contact you/your company soon using the provided details.</p>
-            <p class="success-nepali">फर्म भर्नु भएकोमा धेरै धेरै धन्यवाद। चाँडै तपाईंले दिएको विवरण बाट हामी तपाईं वा तपाईंको कम्पनी संग संपर्क गर्ने छौँ।</p>
-        </div>
-
-        <!-- Google Form Card -->
-        <div class="form-card" id="formCard">
-            <h2>Application Details</h2>
-            <p>Please provide accurate information to help us process your application faster.</p>
+        <div class="form-card">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRowgDvKd8VNXRk9rrCPzmc_PHrtvEkNzLRubzcx0pui0nMQ/viewform?embedded=true" 
                     frameborder="0" 
                     marginheight="0" 
                     marginwidth="0"
-                    id="formIframe"
                     title="Application Form">Loading…</iframe>
         </div>
 
@@ -618,33 +489,6 @@
                 closeMenu();
             }
         });
-
-        // Form submission detection (basic)
-        const iframe = document.getElementById('formIframe');
-        const formCard = document.getElementById('formCard');
-        const successMsg = document.getElementById('successMessage');
-
-        window.addEventListener('message', function(event) {
-            if (event.origin !== "https://docs.google.com") return;
-            // Google Forms sends a message on submit, but it's not consistent.
-            // We'll use a fallback: detect if the iframe content indicates submission.
-            // For simplicity, we can show success after a delay or rely on user click? 
-            // But we'll keep the previous logic with a setInterval as fallback.
-        });
-
-        // Simple fallback: if URL contains 'formResponse' (though not always)
-        // Also, we can listen for a custom event from the iframe (not possible cross-origin)
-        // As a workaround, we'll add a "simulate success" for demo? No, we want real.
-        // We'll keep the setInterval approach that checks the iframe's src? That's unreliable.
-        // Better: no auto-detection; user sees the Google confirmation page inside iframe.
-        // We'll just let the iframe handle it natively.
-        // If you want to manually trigger success (for testing), uncomment below:
-        /*
-        setTimeout(() => {
-            formCard.style.display = 'none';
-            successMsg.style.display = 'block';
-        }, 5000);
-        */
     })();
 </script>
 </body>
