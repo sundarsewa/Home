@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Sundar Sewa</title>
+  <title>Sundar Sewa Pvt. Ltd. | Accounting & Tax Services</title>
   <!-- Font Awesome & Leaflet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
@@ -48,9 +48,9 @@
 
     /* ===== COLOR SCHEME — Logo colors: #FECE0E (gold) & #FE7B03 (orange) ===== */
     :root {
-      --primary-dark: #1e1e1e;      /* neutral dark for text/background contrast */
-      --accent-gold: #FECE0E;       /* primary logo yellow */
-      --accent-orange: #FE7B03;     /* secondary logo orange */
+      --primary-dark: #1e1e1e;
+      --accent-gold: #FECE0E;
+      --accent-orange: #FE7B03;
       --light-bg: #fcf9f2;
       --soft-gray: #f5f5f5;
     }
@@ -161,7 +161,6 @@
       color: white;
       padding: 90px 0;
       text-align: center;
-      opacity: 0.6;
     }
 
     .hero::before {
@@ -499,8 +498,12 @@
         transition: right 0.3s ease;
         gap: 28px;
         z-index: 1001;
+        display: flex; /* ← FIX: ensures links are visible when active */
       }
-      nav ul.active { right: 0; }
+      nav ul.active { 
+        right: 0; 
+        display: flex; /* redundant but safe */
+      }
       nav ul li a { font-size: 1.2rem; }
 
       .logo img { width: 150px; }
@@ -707,4 +710,4 @@
   <div class="contact-buttons">
     <a href="https://wa.me/9779851126502" class="contact-button whatsapp" target="_blank" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32" class="whatsapp-icon">
-        <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm4.938 9.009c-.372 0-1.104.052-1.843.801-.739.749-2.847 2.756-2.847 6.719 0 3.963 2.917 7.471 3.277 7.871.36.4 5.028 7.6 12.4 7.6h.001c1.564 0 2.074-.36 2.074-1.2s-.36-1.56-.739-2.16c-.38-.6-1.44-1.32-2.074-1.56-.634-.24-2.074-.84-3.234.6-1.16 1.44-4.494 4.68-5.774 4.68s-1.654-.36-2.434-1.08c-2.914-2.76-4.814-6.239-4.
+        <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm4.938 9.009c-.372 0-1.104.052-1.843.801-.739.749-2.847 2.756-2.847 6.719 0 3.963 2.917 7.471 3.277 7.871.36.4 5.028 7.6 12.4 7.6h.001c1.564 0 2.074-.36 2.074-1.2s-.36-1.56-.739-2.16c-.38-.6-1.44-1.32-2.074-1.56-.634-.24-2.074-.84-3.234.6-1.16 1.44-4.494 4.68-5.774 4.68s-1.654-.36-2.434-1.08c-2.91
