@@ -34,6 +34,7 @@
       line-height: 1.6;
       color: #1a1a1a;
       background: #ffffff;
+      overflow-x: hidden;
     }
 
     .container {
@@ -541,9 +542,162 @@
 
     .button-text { display: none; }
     .contact-button:hover .button-text { display: inline; margin-left: 6px; }
+
+    /* ===== PRO INTRO OVERLAY ===== */
+    #proIntro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100vh;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      pointer-events: all;
+    }
+
+    #proIntro.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-content {
+      text-align: center;
+      padding: 40px;
+      animation: introSlideUp 0.6s ease-out;
+    }
+
+    @keyframes introSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro-logo-wrapper {
+      margin-bottom: 24px;
+      animation: introPulse 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes introPulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    .intro-logo {
+      width: 220px;
+      height: auto;
+      filter: drop-shadow(0 10px 30px rgba(254, 206, 14, 0.4));
+    }
+
+    .intro-company {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 16px 0 12px;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: introGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes introGlow {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+    }
+
+    .intro-slogan {
+      font-size: 1.15rem;
+      color: #4a4a4a;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .intro-loader {
+      width: 200px;
+      height: 4px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 4px;
+      animation: loaderProgress 2s ease-in-out forwards;
+    }
+
+    @keyframes loaderProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delays for services grid */
+    .services-grid .service-card:nth-child(1) { transition-delay: 0.1s; }
+    .services-grid .service-card:nth-child(2) { transition-delay: 0.2s; }
+    .services-grid .service-card:nth-child(3) { transition-delay: 0.3s; }
+    .services-grid .service-card:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Footer column stagger */
+    .footer-content > div:nth-child(1) { transition-delay: 0.1s; }
+    .footer-content > div:nth-child(2) { transition-delay: 0.2s; }
+    .footer-content > div:nth-child(3) { transition-delay: 0.3s; }
+    .footer-content > div:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Hero button subtle pulse */
+    .hero .btn {
+      animation: btnPulse 2.5s infinite;
+    }
+
+    @keyframes btnPulse {
+      0%, 100% { box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+      50% { box-shadow: 0 14px 28px rgba(254, 123, 3, 0.35); }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Prevent scroll during intro */
+    body.intro-active { overflow: hidden; }
   </style>
 </head>
-<body>
+<body class="intro-active">
+
+<!-- PRO INTRO OVERLAY -->
+<div id="proIntro">
+  <div class="intro-content">
+    <div class="intro-logo-wrapper">
+      <img src="https://raw.githubusercontent.com/sushantjha143/Home/refs/heads/main/image/Sundar_Sewa.png" alt="Sundar Sewa" class="intro-logo">
+    </div>
+    <h1 class="intro-company">SUNDAR SEWA</h1>
+    <p class="intro-slogan">Trusted partner for all financial & legal solutions in Nepal</p>
+    <div class="intro-loader">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+</div>
 
 <!-- Top Header Bar -->
 <div class="top-header">
@@ -585,7 +739,7 @@
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="hero">
+<section id="home" class="hero scroll-reveal">
   <div class="container">
     <h1>Professional Accounting, VAT & Tax Services</h1>
     <p>Trusted partner for all financial & legal solutions in Nepal</p>
@@ -596,24 +750,24 @@
 <!-- Services Section -->
 <section id="services" class="services">
   <div class="container">
-    <h2>Our Services</h2>
+    <h2 class="scroll-reveal">Our Services</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card scroll-reveal">
         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
         <h3>Business Registration</h3>
         <p>Company registration, PAN/VAT registration and other legal formalities.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card scroll-reveal">
         <div class="service-icon"><i class="fas fa-calculator"></i></div>
         <h3>Accounting Services</h3>
         <p>Professional bookkeeping, financial reporting, and accounting system setup.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card scroll-reveal">
         <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
         <h3>Tax Consultation</h3>
         <p>Tax planning, filing, and compliance services for businesses and individuals.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card scroll-reveal">
         <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
         <h3>Audit Services</h3>
         <p>Internal, external and statutory audit services for all types of organizations.</p>
@@ -625,8 +779,8 @@
 <!-- About Section -->
 <section id="about" class="about">
   <div class="container">
-    <h2>About Sundar Sewa</h2>
-    <div class="about-content">
+    <h2 class="scroll-reveal">About Sundar Sewa</h2>
+    <div class="about-content scroll-reveal">
       <p>Sundar Sewa is a private Ltd. company established in the year 2079 with professional & highly experienced teams aiming to provide legal accounting & tax services. It has highly professional expert lawyers, auditors, accountants, insurance agents, skilled manpower etc. who have more than 15 years of experience in their respective fields.</p>
       <p>The experts have collaborated & started to provide online services as well.</p>
       <p>Sundar Sewa Pvt.Ltd is located in Kalimati nearby Aincho Paincho Credit & Saving Corporation. You can contact us from the details given in CONTACT US section. Our company's exact location is also addressed in the map below. Sundar Sewa provides genuine services 24/7.</p>
@@ -638,9 +792,9 @@
 <!-- Contact Section -->
 <section id="contact" class="contact">
   <div class="container">
-    <h2>Contact Us</h2>
+    <h2 class="scroll-reveal">Contact Us</h2>
     <div class="contact-container">
-      <div class="contact-info">
+      <div class="contact-info scroll-reveal">
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
           <h3>Address</h3>
@@ -669,11 +823,11 @@
 <!-- Google Map Section -->
 <section class="map-section">
   <div class="container">
-    <div class="map-heading">
+    <div class="map-heading scroll-reveal">
       <h2>Sundar Sewa on Google Map</h2>
       <p>Find us easily — directions below</p>
     </div>
-    <div class="map-wrapper">
+    <div class="map-wrapper scroll-reveal">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.664593204211!2d85.29787569999999!3d27.6967596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1900383a6e91%3A0x7229949efb8cf11e!2sSundar%20Sewa%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1775901565006!5m2!1sen!2snp" 
    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sundar Sewa Location"></iframe>
     </div>
@@ -684,11 +838,11 @@
 <footer>
   <div class="container">
     <div class="footer-content">
-      <div class="footer-about">
+      <div class="footer-about scroll-reveal">
         <img src="images/sundarsewalogo.png" alt="Sundar Sewa" style="height:auto; width:170px;">
         <p>Professional accounting, tax and business consultancy services in Kathmandu, Nepal.</p>
       </div>
-      <div class="footer-links">
+      <div class="footer-links scroll-reveal">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -697,7 +851,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-services">
+      <div class="footer-services scroll-reveal">
         <h3>Our Services</h3>
         <ul>
           <li><a href="#">Accounting</a></li>
@@ -706,7 +860,7 @@
           <li><a href="#">Business Registration</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
+      <div class="footer-contact scroll-reveal">
         <h3>Contact Info</h3>
         <p><i class="fas fa-map-marker-alt"></i> Kalimati 13, Kathmandu</p>
         <p><i class="fas fa-phone"></i> 9851126502</p>
@@ -723,7 +877,7 @@
 </footer>
 
 <!-- Floating Contact (draggable) -->
-<div class="floating-contact-container" id="floatingContact">
+<div class="floating-contact-container scroll-reveal" id="floatingContact">
   <div class="contact-buttons">
     <a href="https://wa.me/9779851126502" class="contact-button whatsapp" target="_blank" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32" class="whatsapp-icon">
@@ -747,6 +901,45 @@
 
 <script>
   (function() {
+    // ===== PRO INTRO LOGIC =====
+    const proIntro = document.getElementById('proIntro');
+    
+    // Hide intro after exactly 2 seconds
+    setTimeout(() => {
+      proIntro.classList.add('hidden');
+      document.body.classList.remove('intro-active');
+      
+      // Remove from DOM after transition for performance
+      setTimeout(() => {
+        if(proIntro.parentNode) proIntro.parentNode.removeChild(proIntro);
+      }, 400);
+      
+      // Initialize scroll animations after intro completes
+      initScrollAnimations();
+    }, 2000);
+
+    // ===== SCROLL ANIMATIONS WITH INTERSECTION OBSERVER =====
+    function initScrollAnimations() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.12
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
     // Mobile menu toggle - fixed and robust
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -756,14 +949,14 @@
       navMenu.classList.remove('active');
       menuIcon.classList.remove('fa-times');
       menuIcon.classList.add('fa-bars');
-      document.body.style.overflow = ''; // unlock body scroll
+      document.body.style.overflow = '';
     }
 
     function openMenu() {
       navMenu.classList.add('active');
       menuIcon.classList.remove('fa-bars');
       menuIcon.classList.add('fa-times');
-      document.body.style.overflow = 'hidden'; // prevent background scroll
+      document.body.style.overflow = 'hidden';
     }
 
     menuToggle.addEventListener('click', function(e) {
@@ -775,12 +968,10 @@
       }
     });
 
-    // Close menu when a navigation link is clicked
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Close menu if clicking outside of it
     document.addEventListener('click', function(event) {
       if (navMenu.classList.contains('active') && 
           !navMenu.contains(event.target) && 
@@ -789,14 +980,13 @@
       }
     });
 
-    // Close menu on window resize if moving to desktop
     window.addEventListener('resize', function() {
       if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
         closeMenu();
       }
     });
 
-    // Draggable floating contact (unchanged)
+    // Draggable floating contact
     const floatingContact = document.getElementById('floatingContact');
     const dragHandle = floatingContact.querySelector('.drag-handle');
     let isDragging = false, offsetX, offsetY;
